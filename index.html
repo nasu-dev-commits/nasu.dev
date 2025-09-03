@@ -12,23 +12,42 @@
   </style>
 </head>
 <body class="font-sans text-gray-800">
-  
-  <!-- HEADER / NAVBAR FIXO -->
-  <header class="fixed w-full bg-gradient-to-r from-stone-600 to-stone-400/90 shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
-      <h1 class="text-3xl font-bold text-stone-950">nasu<span class="text-3xl font-bold text-yellow-500">.dev</span></h1>
-      <nav>
-        <ul class="hidden md:flex space-x-6 font-medium">
-          <li><a href="#inicio" class="text-gray-950 hover:text-gray-100">Início</a></li>
-          <li><a href="#sobre" class="text-gray-950 hover:text-gray-100">Sobre</a></li>
-          <li><a href="#servicos" class="text-gray-950 hover:text-gray-100">Serviços</a></li>
-          <li><a href="#portfolio" class="text-gray-950 hover:text-gray-100">Portfólio</a></li>
-          <li><a href="#clientes" class="text-gray-950 hover:text-gray-100">Clientes</a></li>
-          <li><a href="#contato" class="text-gray-950 hover:text-gray-100">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+
+<!-- HEADER / NAVBAR FIXO -->
+<header class="fixed w-full bg-gradient-to-r from-stone-600 to-stone-400/90 shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
+    
+    <!-- Logo -->
+    <h1 class="text-3xl font-bold text-stone-950">
+      nasu<span class="text-3xl font-bold text-yellow-500">.dev</span>
+    </h1>
+
+    <!-- Botão menu mobile -->
+    <button data-collapse-toggle="navbar-default" type="button" 
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-800 rounded-lg md:hidden hover:bg-stone-300 focus:outline-none focus:ring-2 focus:ring-stone-200" 
+      aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Abrir menu principal</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" 
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Links -->
+    <nav class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="flex flex-col font-medium mt-4 md:mt-0 md:flex-row md:space-x-6">
+        <li><a href="#inicio" class="block py-2 px-3 text-gray-800 hover:text-gray-100">Início</a></li>
+        <li><a href="#sobre" class="block py-2 px-3 text-gray-800 hover:text-gray-100">Sobre</a></li>
+        <li><a href="#servicos" class="block py-2 px-3 text-gray-800 hover:text-gray-100">Serviços</a></li>
+        <li><a href="#portfolio" class="block py-2 px-3 text-gray-800 hover:text-gray-100">Portfólio</a></li>
+        <li><a href="#clientes" class="block py-2 px-3 text-gray-800 hover:text-gray-100">Clientes</a></li>
+        <li><a href="#contato" class="block py-2 px-3 text-gray-800 hover:text-gray-100">Contato</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
 
   <!-- INÍCIO -->
   <section id="inicio" class="h-screen flex items-center justify-center bg-gradient-to-r from-stone-500 from-1% via-stone-1950 via-1% to-stone-900 via-50% text-dark-400">
@@ -168,4 +187,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.1/flowbite.min.js"></script>
 </body>
 </html>
+
 
