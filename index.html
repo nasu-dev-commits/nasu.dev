@@ -13,8 +13,8 @@
 </head>
 <body class="font-sans text-gray-800">
 
-<!-- HEADER / NAVBAR FIXO -->
-<header class="fixed w-full bg-gradient-to-r from-stone-600 to-stone-400/90 shadow-md z-50">
+  <!-- Header / Navbar fixo -->
+  <header class="fixed w-full bg-gradient-to-r from-stone-600 to-stone-400/90 shadow-md z-50">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
     
     <!-- Logo -->
@@ -23,13 +23,13 @@
     </h1>
 
     <!-- Botão menu mobile -->
-    <button data-collapse-toggle="navbar-default" type="button" 
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-800 rounded-lg md:hidden hover:bg-stone-300 focus:outline-none focus:ring-2 focus:ring-stone-200" 
+    <button data-collapse-toggle="navbar-default" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-800 rounded-lg md:hidden hover:bg-stone-300 focus:outline-none focus:ring-2 focus:ring-stone-200"
       aria-controls="navbar-default" aria-expanded="false">
       <span class="sr-only">Abrir menu principal</span>
-      <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" 
+      <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor"
         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
@@ -47,7 +47,7 @@
     </nav>
 
   </div>
-</header>
+  </header>
 
   <!-- INÍCIO -->
   <section id="inicio" class="h-screen flex items-center justify-center bg-gradient-to-r from-stone-500 from-1% via-stone-1950 via-1% to-stone-900 via-50% text-dark-400">
@@ -184,8 +184,23 @@
   <footer class="py-4 bg-yellow-400 text-stone-950 text-center">
     <p>&copy; 2025 nasu.dev – Todos os direitos reservados.</p>
   </footer>
+  <!-- Fechamento automatico navbar-mobile -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.getElementById('navbar-default');
+      const toggleBtn = document.querySelector('[data-collapse-toggle="navbar-default"]');
+      navbar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          // No mobile, se o menu estiver visível, fecha
+          if (window.innerWidth < 768 && !navbar.classList.contains('hidden')) {
+            // Preferir o toggle do Flowbite para manter aria-expanded em dia
+            if (toggleBtn) toggleBtn.click();
+            else navbar.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.1/flowbite.min.js"></script>
 </body>
 </html>
-
-
